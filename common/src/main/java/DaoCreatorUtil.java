@@ -1,7 +1,6 @@
-package util;
-
 import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.jdbc.JdbcPooledConnectionSource;
+import lombok.NonNull;
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
 
@@ -13,11 +12,11 @@ import java.util.List;
 public class DaoCreatorUtil {
 
     @SneakyThrows
-    public void create(JdbcPooledConnectionSource connectionSource,  Class<?> modelClass) {
+    public void create(@NonNull JdbcPooledConnectionSource connectionSource, @NonNull Class<?> modelClass) {
         DaoManager.createDao(connectionSource, modelClass);
     }
 
-    public void createList(JdbcPooledConnectionSource connectionSource, List<Class<?>> modelClassList) {
+    public void createList(@NonNull JdbcPooledConnectionSource connectionSource, @NonNull List<Class<?>> modelClassList) {
         modelClassList.forEach(modelClass -> {
             try {
                 DaoManager.createDao(connectionSource, modelClass);

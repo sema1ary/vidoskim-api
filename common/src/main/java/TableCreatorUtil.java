@@ -1,5 +1,3 @@
-package util;
-
 import com.j256.ormlite.jdbc.JdbcPooledConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 import lombok.SneakyThrows;
