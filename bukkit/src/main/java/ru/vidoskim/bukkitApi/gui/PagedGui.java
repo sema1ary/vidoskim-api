@@ -76,7 +76,6 @@ public abstract class PagedGui {
 
     private boolean isMoreThanMax(Inventory page) {
         if(!(size == 9)) return currentSlot >= (page.getSize() - 9);
-
         return currentSlot >= (page.getSize() - 1);
     }
 
@@ -90,7 +89,6 @@ public abstract class PagedGui {
     }
 
     private void createBottomMenu(Inventory page) {
-
         page.setItem(size - 9, ItemBuilder.builder("62699")
                 .setName(miniMessage.deserialize("<gray>Назад"))
                 .setClickAction(player -> {
@@ -112,6 +110,5 @@ public abstract class PagedGui {
         currentPage = count;
         Inventory page = inventories.get(currentPage);
         player.openInventory(page);
-
     }
 }
