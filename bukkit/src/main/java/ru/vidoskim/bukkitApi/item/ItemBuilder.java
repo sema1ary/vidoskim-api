@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.function.Consumer;
 
+@SuppressWarnings("unused")
 public class ItemBuilder {
     private String headId;
     private Material material;
