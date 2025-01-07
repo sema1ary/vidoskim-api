@@ -50,7 +50,7 @@ public abstract class PagedGui {
 
     @SuppressWarnings("unused")
     public void addItemToInventory(ItemStack itemStack) {
-        if(inventories.isEmpty()) {
+        if (inventories.isEmpty()) {
             createPage(itemStack);
             return;
         }
@@ -61,19 +61,19 @@ public abstract class PagedGui {
         }
 
         Inventory page = inventories.get(inventories.size() - 1);
-        if(!isMoreThanMax(page)) {
+        if (!isMoreThanMax(page)) {
             page.setItem(currentSlot, itemStack);
             currentSlot++;
             return;
         }
 
-        if(isMoreThanMax(page)) {
+        if (isMoreThanMax(page)) {
             createPage(itemStack);
         }
     }
 
     private boolean isMoreThanMax(Inventory page) {
-        if(!(size == 9)) return currentSlot >= (page.getSize() - 9);
+        if (!(size == 9)) return currentSlot >= (page.getSize() - 9);
         return currentSlot >= (page.getSize() - 1);
     }
 
