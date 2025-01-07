@@ -22,15 +22,13 @@ public abstract class PagedGui {
 
     private int currentSlot = 0;
 
-    private final List<Inventory> inventories;
+    private final List<Inventory> inventories = new ArrayList<>();
 
-    private final MiniMessage miniMessage;
+    private final MiniMessage miniMessage = MiniMessage.miniMessage();
 
     public abstract void createInventory();
 
     public PagedGui(Component title, int size) {
-        this.inventories = new ArrayList<>();
-        this.miniMessage = MiniMessage.miniMessage();
         this.title = title;
         this.size = size;
     }
