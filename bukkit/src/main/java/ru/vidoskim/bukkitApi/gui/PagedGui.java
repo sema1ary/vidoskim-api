@@ -35,7 +35,7 @@ public abstract class PagedGui {
 
     @SuppressWarnings("unused")
     public void open(Player player) {
-        if(inventories.isEmpty()) return;
+        if (inventories.isEmpty()) return;
 
         Inventory mainPage = inventories.get(currentPage);
         Inventory lastPage = inventories.get(inventories.size() - 1);
