@@ -1,5 +1,6 @@
 package ru.vidoskim.bukkitApi.gui;
 
+import lombok.NonNull;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.Bukkit;
@@ -28,13 +29,13 @@ public abstract class PagedGui {
 
     public abstract void createInventory();
 
-    public PagedGui(Component title, int size) {
+    public PagedGui(@NonNull Component title, int size) {
         this.title = title;
         this.size = size;
     }
 
     @SuppressWarnings("unused")
-    public void open(Player player) {
+    public void open(@NonNull Player player) {
         if (inventories.isEmpty()) return;
 
         Inventory mainPage = inventories.get(currentPage);
@@ -49,7 +50,7 @@ public abstract class PagedGui {
     }
 
     @SuppressWarnings("unused")
-    public void addItemToInventory(ItemStack itemStack) {
+    public void addItemToInventory(@NonNull ItemStack itemStack) {
         if (inventories.isEmpty()) {
             createPage(itemStack);
             return;

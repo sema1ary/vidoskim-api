@@ -1,6 +1,7 @@
 package ru.vidoskim.bukkitApi.item;
 
 import lombok.Getter;
+import lombok.NonNull;
 import me.arcaniax.hdb.api.HeadDatabaseAPI;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
@@ -34,17 +35,17 @@ public class ItemBuilder {
         this.headId = headId;
     }
 
-    public ItemBuilder setName(Component name) {
+    public ItemBuilder setName(@NonNull Component name) {
         this.name = name;
         return this;
     }
 
-    public ItemBuilder setLore(List<Component> lore) {
+    public ItemBuilder setLore(@NonNull List<Component> lore) {
         this.lore = lore;
         return this;
     }
 
-    public ItemBuilder setClickAction(Consumer<Player> action) {
+    public ItemBuilder setClickAction(@NonNull Consumer<Player> action) {
         this.clickAction = action;
         return this;
     }
@@ -69,11 +70,11 @@ public class ItemBuilder {
         return itemStack;
     }
 
-    public static ItemBuilder builder(Material material) {
+    public static ItemBuilder builder(@NonNull Material material) {
         return new ItemBuilder(material);
     }
 
-    public static ItemBuilder builder(String headId) {
+    public static ItemBuilder builder(@NonNull String headId) {
         return new ItemBuilder(headId);
     }
 }
