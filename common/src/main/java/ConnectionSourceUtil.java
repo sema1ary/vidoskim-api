@@ -1,10 +1,8 @@
 import com.j256.ormlite.jdbc.JdbcPooledConnectionSource;
-import lombok.Getter;
 import lombok.NonNull;
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
 
-@Getter
 @UtilityClass
 @SuppressWarnings("unused")
 public class ConnectionSourceUtil {

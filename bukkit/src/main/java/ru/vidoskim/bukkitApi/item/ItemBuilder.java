@@ -1,6 +1,5 @@
 package ru.vidoskim.bukkitApi.item;
 
-import lombok.Getter;
 import lombok.NonNull;
 import me.arcaniax.hdb.api.HeadDatabaseAPI;
 import net.kyori.adventure.text.Component;
@@ -22,7 +21,6 @@ public class ItemBuilder {
     private Component name;
     private List<Component> lore;
 
-    @Getter
     private Consumer<Player> clickAction;
 
     private final HeadDatabaseAPI headDatabaseAPI = new HeadDatabaseAPI();
