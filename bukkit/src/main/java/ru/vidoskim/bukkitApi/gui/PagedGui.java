@@ -34,7 +34,6 @@ public abstract class PagedGui {
         this.size = size;
     }
 
-    @SuppressWarnings("unused")
     public void open(@NonNull Player player) {
         if (inventories.isEmpty()) return;
 
@@ -49,7 +48,6 @@ public abstract class PagedGui {
         player.openInventory(mainPage);
     }
 
-    @SuppressWarnings("unused")
     public void addItemToInventory(@NonNull ItemStack itemStack) {
         if (inventories.isEmpty()) {
             createPage(itemStack);
