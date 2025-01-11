@@ -40,6 +40,7 @@ public class ItemBuilder {
         else itemStack = headDatabaseAPI.getItemHead(headId);
 
         ItemMeta meta = itemStack.getItemMeta();
+
         if(meta != null) {
             if (name != null) meta.displayName(name);
             if (lore != null) meta.lore(lore);
@@ -50,6 +51,7 @@ public class ItemBuilder {
                 ItemListener.registerAction(uuid, clickAction);
             }
         }
+
         itemStack.setItemMeta(meta);
         return itemStack;
     }
