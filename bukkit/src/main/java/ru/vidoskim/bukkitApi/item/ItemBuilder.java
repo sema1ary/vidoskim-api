@@ -1,6 +1,7 @@
 package ru.vidoskim.bukkitApi.item;
 
 import lombok.NonNull;
+import lombok.experimental.Accessors;
 import me.arcaniax.hdb.api.HeadDatabaseAPI;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
@@ -14,13 +15,13 @@ import java.util.List;
 import java.util.UUID;
 import java.util.function.Consumer;
 
+@Accessors(chain = true)
 @SuppressWarnings("unused")
 public class ItemBuilder {
     private String headId;
     private Material material;
     private Component name;
     private List<Component> lore;
-
     private Consumer<Player> clickAction;
 
     private final HeadDatabaseAPI headDatabaseAPI = new HeadDatabaseAPI();
@@ -31,21 +32,6 @@ public class ItemBuilder {
 
     public ItemBuilder(String headId) {
         this.headId = headId;
-    }
-
-    public ItemBuilder setName(@NonNull Component name) {
-        this.name = name;
-        return this;
-    }
-
-    public ItemBuilder setLore(@NonNull List<Component> lore) {
-        this.lore = lore;
-        return this;
-    }
-
-    public ItemBuilder setClickAction(@NonNull Consumer<Player> action) {
-        this.clickAction = action;
-        return this;
     }
 
     public ItemStack build() {
