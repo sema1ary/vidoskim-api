@@ -64,6 +64,10 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>panda-repository</id>
+            <url>https://repo.panda-lang.org/releases</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -80,10 +84,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.mojang</groupId>
-            <artifactId>authlib</artifactId>
-            <version>1.5.25</version>
-            <scope>provided</scope>
+            <groupId>dev.rollczi</groupId>
+            <artifactId>litecommands-bukkit</artifactId>
+            <version>3.4.3</version>
         </dependency>
     </dependencies>
 </project>
