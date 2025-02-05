@@ -1,8 +1,5 @@
 package service;
 
-import com.j256.ormlite.dao.Dao;
-import com.j256.ormlite.dao.DaoManager;
-import com.j256.ormlite.jdbc.JdbcPooledConnectionSource;
 import lombok.experimental.UtilityClass;
 
 import java.util.HashMap;
@@ -24,9 +21,5 @@ public class ServiceUtil {
     private void registerService(Class<?> serviceClass, Object service) {
         ((Service) service).enable();
         serviceMap.put(serviceClass, service);
-    }
-
-    private  <D extends Dao<T, ?>, T> D getDao(JdbcPooledConnectionSource connectionSource, Class<T> daoClass) {
-        return DaoManager.lookupDao(connectionSource, daoClass);
     }
 }

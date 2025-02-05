@@ -10,7 +10,7 @@ import lombok.experimental.UtilityClass;
 @SuppressWarnings("unused")
 public class DaoCreatorUtil {
     @SneakyThrows
-    public void create(@NonNull JdbcPooledConnectionSource connectionSource, @NonNull Class<?>... modelClasses) {
+    void create(@NonNull JdbcPooledConnectionSource connectionSource, @NonNull Class<?>... modelClasses) {
         for(Class<?> modelClass: modelClasses) {
             DaoManager.createDao(connectionSource, modelClass);
         }
