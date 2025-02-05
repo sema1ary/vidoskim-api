@@ -11,8 +11,6 @@ import org.bukkit.event.player.PlayerInteractEvent;
 
 @RequiredArgsConstructor
 public class ItemListener implements Listener {
-
-
     @EventHandler
     private void onInventoryClick(InventoryClickEvent event) {
         if(ItemActionService.acceptAction(event, event.getCurrentItem(), (Player) event.getWhoClicked())) {

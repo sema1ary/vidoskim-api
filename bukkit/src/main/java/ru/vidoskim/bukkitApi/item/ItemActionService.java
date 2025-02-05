@@ -16,9 +16,11 @@ public class ItemActionService {
     private static final Map<Event, Map<String, Consumer<Player>>> actions = new HashMap<>();
 
     public static void registerAction(Event event, String uuid, Consumer<Player> action) {
-        Map<String, Consumer<Player>> tempMap = new HashMap<>();
-        tempMap.put(uuid, action);
-        actions.put(event, tempMap);
+        Map<String, Consumer<Player>> actionList = actions.get(event);
+        actionList.put(uuid, action);
+
+        actions.remove(event);
+        actions.put(event, actionList);
     }
 
     public static boolean acceptAction(Event event, ItemStack itemStack, Player player) {
