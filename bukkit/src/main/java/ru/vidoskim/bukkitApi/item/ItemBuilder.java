@@ -7,7 +7,6 @@ import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
@@ -72,7 +71,7 @@ public class ItemBuilder {
         return this;
     }
 
-    public ItemBuilder addAction(@NonNull Event event, @NonNull Consumer<Player> action) {
+    public ItemBuilder addAction(@NonNull EventType event, @NonNull Consumer<Player> action) {
         ItemMeta itemMeta = item.getItemMeta();
         itemMeta.getPersistentDataContainer().set(NamespacedKey.minecraft("action"), PersistentDataType.STRING, uuid.toString());
         item.setItemMeta(itemMeta);
