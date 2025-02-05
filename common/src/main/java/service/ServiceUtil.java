@@ -18,7 +18,7 @@ public class ServiceUtil {
         return null;
     }
 
-    private void registerService(Class<?> serviceClass, Object service) {
+    public void registerService(Class<?> serviceClass, Object service) {
         ((Service) service).enable();
         serviceMap.put(serviceClass, service);
     }
