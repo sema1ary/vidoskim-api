@@ -80,4 +80,8 @@ public class ItemBuilder {
         ItemActionService.registerAction(event, uuid.toString(), action);
         return this;
     }
+
+    public static ItemBuilder builder(Material material) {
+        return new ItemBuilder(material);
+    }
  }

@@ -1,4 +1,4 @@
-name: bukkitApi
+name: bukkit-api
 version: '1.0'
 main: ru.vidoskim.bukkitApi.BukkitApi
 api-version: '1.20'
