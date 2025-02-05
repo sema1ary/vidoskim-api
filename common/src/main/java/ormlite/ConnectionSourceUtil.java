@@ -30,7 +30,7 @@ public class ConnectionSourceUtil {
         connectionSource.close();
     }
 
-    private  <D extends Dao<T, ?>, T> D getDao(JdbcPooledConnectionSource connectionSource, Class<T> daoClass) {
+    public <D extends Dao<T, ?>, T> D getDao(JdbcPooledConnectionSource connectionSource, Class<T> daoClass) {
         return DaoManager.lookupDao(connectionSource, daoClass);
     }
 }
