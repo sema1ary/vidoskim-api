@@ -9,11 +9,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>bukkit</artifactId>
+    <artifactId>bukkit-module</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
-
-    <name>bukkit</name>
 
     <properties>
         <java.version>17</java.version>
