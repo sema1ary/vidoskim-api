@@ -9,10 +9,10 @@ import lombok.experimental.UtilityClass;
 @SuppressWarnings("unused")
 public class ConnectionSourceUtil {
     @SneakyThrows
-    public JdbcPooledConnectionSource connectSqlite(@NonNull String filePath) {
+    public JdbcPooledConnectionSource connectSqlite(@NonNull String filePath, @NonNull Class<?>... modelClasses) {
         JdbcPooledConnectionSource connectionSource = new JdbcPooledConnectionSource(
                 "jdbc:sqlite:" + filePath);
-        createModelDaoAndTable(connectionSource);
+        createModelDaoAndTable(connectionSource, modelClasses);
         return connectionSource;
     }
 
@@ -21,7 +21,7 @@ public class ConnectionSourceUtil {
         JdbcPooledConnectionSource connectionSource = new JdbcPooledConnectionSource(
                 "jdbc:mysql://" + host + "/" + database + "?useSSL=true&autoReconnect=true");
         setUpTheConnection(connectionSource, user, pass);
-        createModelDaoAndTable(connectionSource);
+        createModelDaoAndTable(connectionSource, modelClasses);
 
         return connectionSource;
     }

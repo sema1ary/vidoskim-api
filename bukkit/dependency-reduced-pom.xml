@@ -16,7 +16,7 @@
         <directory>src/main/resources</directory>
       </resource>
     </resources>
-    <finalName>bukkit-api</finalName>
+    <finalName>vidoskim-api-bukkit</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>

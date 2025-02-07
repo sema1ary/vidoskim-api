@@ -19,7 +19,7 @@
     </properties>
 
     <build>
-        <finalName>bukkit-api</finalName>
+        <finalName>vidoskim-api-bukkit</finalName>
         <defaultGoal>clean package</defaultGoal>
         <plugins>
             <plugin>
@@ -79,6 +79,11 @@
             <groupId>dev.rollczi</groupId>
             <artifactId>litecommands-bukkit</artifactId>
             <version>3.4.3</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.vidoskim</groupId>
+            <artifactId>common-module</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
