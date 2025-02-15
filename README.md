@@ -1,10 +1,10 @@
-# Vidoskim API
+# 🔧 Vidoskim API
 
-## Common module:
+## 🧠 Common module:
 Данный модуль содержит утилиты для работы с базой данных через ORM (ORMLite) и интерфейс Сервиса.
 Методы для работы с базой данных различаются на 2 варианта:
 
-### MySQL:
+### 🦾 MySQL:
 ```java
 public class MySQLExample {
     
@@ -24,7 +24,7 @@ public class MySQLExample {
 }
 ```
 
-### Sqlite:
+### 🦿 Sqlite:
 ```java
 public class MySQLExample {
     
@@ -104,7 +104,7 @@ public class TestUser {
 }
 ```
 
-### Service интерфейс:
+### 🏋️‍♂️ Service интерфейс:
 ```java
 public interface TestService extends Service {
     // etc...
@@ -140,12 +140,12 @@ public class ServiceExample {
 }
 ```
 
-## Bukkit module:
+## 🔨 Bukkit module:
 Данный модуль предназначен для bukkit-плагинов (Майнкрафт-а). Содержит в себе фабрику 
 для регистрации команды через _**LiteCommands**_ (https://github.com/Rollczi/LiteCommands) и _**MessagesService**_, 
 он позволяет легче простого добавить в плагин локализацию с возможностью перезагрузки сообщений.
 
-### LiteCommands:
+### 📜 LiteCommands:
 ```java
 public class LiteCommandsExamplePlugin extends JavaPlugin {
     @Override
@@ -163,7 +163,7 @@ public class LiteCommandsExamplePlugin extends JavaPlugin {
 }
 ```
 
-### MessagesService:
+### 📚 MessagesService:
 ```java
 public class MessagesServiceExamplePlugin extends JavaPlugin {
     @Override
