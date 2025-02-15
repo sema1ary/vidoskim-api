@@ -3,7 +3,7 @@ package ormlite;
 import com.j256.ormlite.jdbc.JdbcPooledConnectionSource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import ormlite.model.TestUserModel;
+import ormlite.model.TestUser;
 
 public class ConnectionSourceUtilTest {
     @Test
@@ -13,7 +13,7 @@ public class ConnectionSourceUtilTest {
                 "freedb_plugins_test",
                 "freedb_plugin_tester",
                 "2WJAHY$f!#Hgjma",
-                TestUserModel.class
+                TestUser.class
         );
 
         Assertions.assertNotNull(connectionSource);
@@ -22,7 +22,7 @@ public class ConnectionSourceUtilTest {
     @Test
     void connectSqlite() {
         JdbcPooledConnectionSource connectionSource = ConnectionSourceUtil.connectSqlite(
-                "src/test/resources/test_db.sqlite", TestUserModel.class);
+                "src/test/resources/test_db.sqlite", TestUser.class);
 
         Assertions.assertNotNull(connectionSource);
     }

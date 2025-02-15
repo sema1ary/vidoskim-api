@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @DatabaseTable(tableName = "players")
-public class TestUserModel {
+public class TestUser {
     @DatabaseField(generatedId = true, unique = true)
     private Long id;
 
