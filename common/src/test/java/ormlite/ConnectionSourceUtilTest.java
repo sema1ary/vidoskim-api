@@ -10,9 +10,10 @@ public class ConnectionSourceUtilTest {
     void connectMySQL() {
         JdbcPooledConnectionSource connectionSource = ConnectionSourceUtil.connectMySQL(
                 "sql.freedb.tech:3306",
-                "freedb_marry-test",
-                "freedb_vidoskim",
-                "p7xB#b%As%Mhp$n"
+                "freedb_plugins_test",
+                "freedb_plugin_tester",
+                "2WJAHY$f!#Hgjma",
+                TestUserModel.class
         );
 
         Assertions.assertNotNull(connectionSource);
