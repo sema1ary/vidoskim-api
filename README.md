@@ -42,7 +42,7 @@ public class MySQLExample {
 ```
 
 ### TestUser модель:
-С lombok:
+😊 С lombok:
 ```java
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
@@ -65,7 +65,7 @@ public class TestUser {
 }
 ```
 
-Без lombok:
+😒 Без lombok:
 ```java
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
