@@ -159,7 +159,7 @@ public class LiteCommandsExamplePlugin extends JavaPlugin {
         );
     }
     
-    // В кавычках - сообщения при ошибках liteCommnads.
+    // В кавычках - сообщения при ошибках liteCommands.
 }
 ```
 
@@ -187,3 +187,16 @@ messages:
   message-example: 'Test message'
 ```
 Все сообщения обязательно должны быть в секции messages, иначе выдаст ошибку.
+
+## Velocity module:
+Данный модуль предназначен для velocity-плагинов (Майнкрафт-а, прокси серверов). Содержит в себе фабрику
+для регистрации команды через _**LiteCommands**_ (https://github.com/Rollczi/LiteCommands)
+```java
+//        new LiteCommandUtil().create(MessagesConfig.PREFIX,
+//                "Неправильное использование",
+//                        "Команда только для игроков",
+//                        "Игрок не найден",
+//
+//                        new TestCommand() // Ваша команда
+//        );
+```
