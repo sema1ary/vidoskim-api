@@ -4,12 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.vidoskim</groupId>
-    <artifactId>velocity</artifactId>
-    <version>1.0</version>
-    <packaging>jar</packaging>
+    <parent>
+        <groupId>ru.vidoskim</groupId>
+        <artifactId>vidoskim-api</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
-    <name>velocity</name>
+    <artifactId>velocity-module</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <properties>
         <java.version>17</java.version>
@@ -168,6 +171,11 @@
             <groupId>dev.rollczi</groupId>
             <artifactId>litecommands-velocity</artifactId>
             <version>3.4.3</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.vidoskim</groupId>
+            <artifactId>common-module</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>

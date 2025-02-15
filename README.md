@@ -1,5 +1,43 @@
 # 🔧 Vidoskim API
 
+## Maven:
+Bukkit и Velocity содержат Common
+1) Установите проект себе
+2) Откройте проект и нажмите в maven -> нужный вам модуль
+3) Нажмите clean затем install
+
+Дальше используйте приведенные ниже dependency
+
+### Bukkit:
+```xml
+<dependency>
+    <groupId>ru.vidoskim</groupId>
+    <artifactId>bukkit-module</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <scope>provided</scope>
+</dependency>
+```
+
+### Common:
+```xml
+<dependency>
+    <groupId>ru.vidoskim</groupId>
+    <artifactId>common-module</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <scope>provided</scope>
+</dependency>
+```
+
+### Velocity:
+```xml
+<dependency>
+    <groupId>ru.vidoskim</groupId>
+    <artifactId>velocity-module</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <scope>provided</scope>
+</dependency>
+```
+
 ## 🧠 Common module:
 Данный модуль содержит утилиты для работы с базой данных через ORM (ORMLite) и интерфейс Сервиса.
 Методы для работы с базой данных различаются на 2 варианта:
