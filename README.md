@@ -128,3 +128,49 @@ public class TestServiceImpl implements TestService {
     // etc...
 }
 ```
+
+## Bukkit module:
+Данный модуль предназначен для bukkit-плагинов (Майнкрафт-а). Содержит в себе фабрику 
+для регистрации команды через _**LiteCommands**_ (https://github.com/Rollczi/LiteCommands) и _**MessagesService**_, 
+он позволяет легче простого добавить в плагин локализацию с возможностью перезагрузки сообщений.
+
+### LiteCommands:
+```java
+public class LiteCommandsExamplePlugin extends JavaPlugin {
+    @Override
+    public void onEnable() {
+        new LiteCommandUtil().create(MessagesConfig.PREFIX,
+                MessagesConfig.INVALID_USAGE_MESSAGE,
+                MessagesConfig.PLAYER_ONLY_COMMAND_MESSAGE,
+                MessagesConfig.PLAYER_NOT_FOUND_COMMAND_MESSAGE,
+
+                new TestCommand() // Ваша команда
+        );
+    }
+}
+```
+
+### MessagesService:
+```java
+public class MessagesServiceExamplePlugin extends JavaPlugin {
+    @Override
+    public void onEnable() {
+        MessagesService messagesService = new MessagesService();
+        
+        messagesService.reload(this);
+        
+        String messageExample = messagesService.getMessage("message-example");
+        
+        this.getLogger().info(messageExample);
+        
+        // Если сообщение не будет найдено будет возвращено "Localization error: message-example";
+        // Если не будет найдена секция messages будет выдана ошибка: The config does not contain a messages section.
+    }
+}
+```
+Пример config:
+```yaml
+messages:
+  message-example: 'Test message'
+```
+Все сообщения обязательно должны быть в секции messages, иначе выдаст ошибку.
