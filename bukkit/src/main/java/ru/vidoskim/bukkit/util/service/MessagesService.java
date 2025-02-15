@@ -1,4 +1,4 @@
-package ru.vidoskim.bukkitApi.util.service;
+package ru.vidoskim.bukkit.util.service;
 
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;

@@ -1,5 +1,5 @@
 name: vidoskimApi
 version: '1.0'
-main: ru.vidoskim.bukkitApi.BukkitApi
+main: ru.vidoskim.bukkit.BukkitApi
 api-version: '1.20'
 authors: [ Vidoskim ]
