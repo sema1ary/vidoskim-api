@@ -151,13 +151,15 @@ public class LiteCommandsExamplePlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         new LiteCommandUtil().create(MessagesConfig.PREFIX,
-                MessagesConfig.INVALID_USAGE_MESSAGE,
-                MessagesConfig.PLAYER_ONLY_COMMAND_MESSAGE,
-                MessagesConfig.PLAYER_NOT_FOUND_COMMAND_MESSAGE,
+                "Неправильное использование",
+                "Команда только для игроков",
+                "Игрок не найден",
 
                 new TestCommand() // Ваша команда
         );
     }
+    
+    // В кавычках - сообщения при ошибках liteCommnads.
 }
 ```
 
