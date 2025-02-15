@@ -129,6 +129,17 @@ public class TestServiceImpl implements TestService {
 }
 ```
 
+В Main:
+```java
+public class ServiceExample {
+    public static void main(String[] args) {
+        TestService testService = new TestServiceImpl();
+        testService.enable();
+        testService.disable();
+    }
+}
+```
+
 ## Bukkit module:
 Данный модуль предназначен для bukkit-плагинов (Майнкрафт-а). Содержит в себе фабрику 
 для регистрации команды через _**LiteCommands**_ (https://github.com/Rollczi/LiteCommands) и _**MessagesService**_, 
