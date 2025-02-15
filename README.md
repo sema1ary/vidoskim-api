@@ -1,18 +1,18 @@
 # 🔧 Vidoskim API
 ## Содержание:
-- [Maven](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#maven)
+- [**_Maven_**](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#maven)
 - - [Bukkit](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#bukkit)
 - - [Common](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#common)
 - - [Velocity](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#velocity)
-- [Common module](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-common-module)
+- [**_Common module_**](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-common-module)
 - - [MySQL](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-mysql)
 - - [Sqlite](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-sqlite)
 - - [TestUser модель](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#testuser-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C)
 - - [Service интерфейс](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#%EF%B8%8F%EF%B8%8F-service-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81)
-- [Bukkit module](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-bukkit-module)
+- [**_Bukkit module_**](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-bukkit-module)
 - - [LiteCommands](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-litecommands)
 - - [MessagesService](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-messagesservice)
-- [Velocity module](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-velocity-module)
+- [**_Velocity module_**](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-velocity-module)
 - - [LiteCommands](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-litecommands-1)
 
 ## Maven:
