@@ -324,6 +324,22 @@ messages:
 ```
 Все сообщения обязательно должны быть в секции messages, иначе выдаст ошибку.
 
+### ItemBuilder:
+Позволяет создавать ItemStack-и без ItemMeta в удобном builder-е, скоро будут actions, для обработки кликов и прочего.
+```java
+public class ItemBuilderExample implements Listener {
+    @EventHandler
+    private void onJoin(PlayerJoinEvent event) {
+        event.getPlayer().getInventory().setItemInMainHand(
+                ItemBuilder.builder(Material.PLAYER_HEAD)
+                .setName(Component.text("test"))
+                // etc...
+                .build()
+        );
+    }
+}
+```
+
 ## 💠 Velocity module:
 Данный модуль предназначен для velocity-плагинов (Майнкрафт-а, прокси серверов). Содержит в себе фабрику
 для регистрации команды через _**LiteCommands**_ (https://github.com/Rollczi/LiteCommands)
