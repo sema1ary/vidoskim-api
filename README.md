@@ -196,8 +196,8 @@ public interface TestUserDao extends Dao<TestUser, Long> {
 
 Реализация:
 ```java
-public class HiderUserDaoImpl extends BaseDaoImpl<TestUser, Long> implements HiderUserDao {
-    public HiderUserDaoImpl(ConnectionSource connectionSource, Class<TestUser> dataClass) throws SQLException {
+public class TestUserDaoImpl extends BaseDaoImpl<TestUser, Long> implements TestUserDao {
+    public TestUserDaoImpl(ConnectionSource connectionSource, Class<TestUser> dataClass) throws SQLException {
         super(connectionSource, dataClass);
     }
 
