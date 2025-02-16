@@ -20,6 +20,19 @@ public class ConnectionSourceUtilTest {
     }
 
     @Test
+    void connectMariaDB() {
+        JdbcPooledConnectionSource connectionSource = ConnectionSourceUtil.connectMariaDB(
+                "sql.freedb.tech:3306",
+                "freedb_plugins_test",
+                "freedb_plugin_tester",
+                "2WJAHY$f!#Hgjma",
+                TestUser.class
+        );
+
+        Assertions.assertNotNull(connectionSource);
+    }
+
+    @Test
     void connectSqlite() {
         JdbcPooledConnectionSource connectionSource = ConnectionSourceUtil.connectSqlite(
                 "src/test/resources/test_db.sqlite", TestUser.class);
