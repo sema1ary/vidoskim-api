@@ -1,8 +1,11 @@
 package ru.vidoskim.bukkit.util.item;
 
+import com.destroystokyo.paper.profile.PlayerProfile;
+import com.destroystokyo.paper.profile.ProfileProperty;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 import net.kyori.adventure.text.Component;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -42,11 +45,15 @@ public class ItemBuilder {
         return this;
     }
 
-    public ItemBuilder setSkullTexture(String texture) {
+    @SuppressWarnings("all")
+    public ItemBuilder setSkullTexture(String value, String signature) {
         SkullMeta skullMeta = (SkullMeta) itemStack.getItemMeta();
 
-        GameProfile gameProfile = new GameProfile(UUID.randomUUID(), "vidoskimApi");
-        gameProfile.getProperties().put("textures", new Property("textures", texture));
+        PlayerProfile skin2ab60e62 = Bukkit.createProfile(UUID.randomUUID(), "vidoskimApi");
+        skin2ab60e62.setProperty(new ProfileProperty("textures", value, signature));
+
+        skullMeta.setOwnerProfile(skin2ab60e62);
+
         itemStack.setItemMeta(skullMeta);
 
         return this;
