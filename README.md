@@ -178,6 +178,71 @@ public class TestUser {
 }
 ```
 
+Для каждой модели должен быть DAO:
+```java
+// Long - id
+public interface TestUserDao extends Dao<TestUser, Long> {
+    TestUser save(TestUser user) throws SQLException;
+
+    void saveAll(List<TestUser> users) throws SQLException;
+
+    Optional<TestUser> findById(Long id) throws SQLException;
+
+    Optional<TestUser> findByUsername(String username) throws SQLException;
+
+    List<TestUser> findAll() throws SQLException;
+}
+```
+
+Реализация:
+```java
+public class HiderUserDaoImpl extends BaseDaoImpl<TestUser, Long> implements HiderUserDao {
+    public HiderUserDaoImpl(ConnectionSource connectionSource, Class<TestUser> dataClass) throws SQLException {
+        super(connectionSource, dataClass);
+    }
+
+    @Override
+    public TestUser save(TestUser user) throws SQLException {
+        createOrUpdate(user);
+        return user;
+    }
+
+    @Override
+    public void saveAll(List<TestUser> users) throws SQLException {
+        callBatchTasks((Callable<Void>) () -> {
+            for (TestUser user : users) {
+                createOrUpdate(user);
+            }
+            return null;
+        });
+    }
+
+    @Override
+    public Optional<TestUser> findById(Long id) throws SQLException {
+        TestUser result = queryForId(id);
+        return Optional.ofNullable(result);
+    }
+
+    @Override
+    public Optional<TestUser> findByUsername(String username) throws SQLException {
+        if (username == null) return Optional.empty();
+
+        QueryBuilder<TestUser, Long> queryBuilder = queryBuilder();
+        Where<TestUser, Long> where = queryBuilder.where();
+        String columnName = "username";
+
+        SelectArg selectArg = new SelectArg(SqlType.STRING, username.toLowerCase());
+        where.raw("LOWER(" + columnName + ")" + " = LOWER(?)", selectArg);
+        return Optional.ofNullable(queryBuilder.queryForFirst());
+    }
+
+    @Override
+    public List<TestUser> findAll() throws SQLException {
+        return queryForAll();
+    }
+}
+```
+
 ### 🏋️‍♂️ Service интерфейс:
 ```java
 public interface TestService extends Service {
