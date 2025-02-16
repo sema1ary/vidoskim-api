@@ -80,7 +80,7 @@ public class MySQLExample {
 
 ### 🦾 MariaDB:
 ```java
-public class MySQLExample {
+public class MariaDBExample {
     
     private JdbcPooledConnectionSource connectionSource;
 
@@ -100,7 +100,7 @@ public class MySQLExample {
 
 ### 🦿 Sqlite:
 ```java
-public class MySQLExample {
+public class SqliteExample {
     
     private JdbcPooledConnectionSource connectionSource;
 
