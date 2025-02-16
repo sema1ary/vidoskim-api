@@ -30,7 +30,6 @@ Bukkit и Velocity содержат Common
     <groupId>ru.vidoskim</groupId>
     <artifactId>bukkit-module</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <scope>provided</scope>
 </dependency>
 ```
 
@@ -40,7 +39,6 @@ Bukkit и Velocity содержат Common
     <groupId>ru.vidoskim</groupId>
     <artifactId>common-module</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <scope>provided</scope>
 </dependency>
 ```
 
@@ -50,7 +48,6 @@ Bukkit и Velocity содержат Common
     <groupId>ru.vidoskim</groupId>
     <artifactId>velocity-module</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <scope>provided</scope>
 </dependency>
 ```
 
