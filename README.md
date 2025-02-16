@@ -129,7 +129,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@DatabaseTable(tableName = "players")
+@DatabaseTable(tableName = "players", daoClass = TestUserDaoImpl.class)
 public class TestUser {
     @DatabaseField(generatedId = true, unique = true)
     private Long id;
@@ -144,7 +144,7 @@ public class TestUser {
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
-@DatabaseTable(tableName = "players")
+@DatabaseTable(tableName = "players", daoClass = TestUserDaoImpl.class)
 public class TestUser {
     @DatabaseField(generatedId = true, unique = true)
     private Long id;
