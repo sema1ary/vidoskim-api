@@ -77,6 +77,26 @@ public class MySQLExample {
 }
 ```
 
+### 🦾 MariaDB:
+```java
+public class MySQLExample {
+    
+    private JdbcPooledConnectionSource connectionSource;
+
+    public static void main(String[] args) { 
+        connectionSource = ConnectionSourceUtil.connectMariaDB(
+                "host",
+                "database",
+                "username",
+                "password",
+                TestUserModel.class // Модели, пример:
+                // TestUser.class, User.class
+                // Пример модели TestUser ниже
+        );
+    }
+}
+```
+
 ### 🦿 Sqlite:
 ```java
 public class MySQLExample {
