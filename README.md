@@ -96,6 +96,26 @@ public class MariaDBExample {
 }
 ```
 
+### 🦾 PostgreSQL:
+```java
+public class PostgreSQLExample {
+    
+    private JdbcPooledConnectionSource connectionSource;
+
+    public static void main(String[] args) { 
+        connectionSource = ConnectionSourceUtil.connectPostgreSQL(
+                "host",
+                "database",
+                "username",
+                "password",
+                TestUserModel.class // Модели, пример:
+                // TestUser.class, User.class
+                // Пример модели TestUser ниже
+        );
+    }
+}
+```
+
 ### 🦿 Sqlite:
 ```java
 public class SqliteExample {
