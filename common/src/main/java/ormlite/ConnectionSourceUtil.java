@@ -23,12 +23,19 @@ public class ConnectionSourceUtil {
         String driver;
         String params;
 
-        if(type.equals(SQLType.MYSQL)) {
-            driver = "mysql";
-            params = "?useSSL=true&autoReconnect=true";
-        } else {
-            driver = "mariadb";
-            params = "?sslMode=trust&autoReconnect=true";
+        switch (type) {
+            default -> {
+                driver = "mysql";
+                params = "?useSSL=true&autoReconnect=true";
+            }
+            case MARIADB -> {
+                driver = "mariadb";
+                params = "?sslMode=trust&autoReconnect=true";
+            }
+            case POSTGRESQL -> {
+                driver = "postgresql";
+                params = "?sslMode=trust&autoReconnect=true";
+            }
         }
 
         JdbcPooledConnectionSource connectionSource = new JdbcPooledConnectionSource(
@@ -48,6 +55,13 @@ public class ConnectionSourceUtil {
     public JdbcPooledConnectionSource connectMariaDB(String host, String database
             , String user, String pass, @NonNull Class<?>... modelClasses) {
         return connectSQLDatabase(SQLType.MARIADB, host, database, user, pass, modelClasses);
+    }
+
+    @SneakyThrows
+    public JdbcPooledConnectionSource connectPostgreSQL(String host, String database
+            , String user, String pass, @NonNull Class<?>... modelClasses) {
+
+        return connectSQLDatabase(SQLType.POSTGRESQL, host, database, user, pass, modelClasses);
     }
 
     private void setUpTheConnection(@NonNull JdbcPooledConnectionSource connectionSource, String user, String pass) {

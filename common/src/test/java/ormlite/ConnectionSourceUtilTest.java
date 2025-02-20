@@ -33,6 +33,18 @@ public class ConnectionSourceUtilTest {
     }
 
     @Test
+    void connectPostgreSQL() {
+        JdbcPooledConnectionSource connectionSource = ConnectionSourceUtil.connectPostgreSQL(
+                "dpg-curjcj9u0jms73bv3i10-a.oregon-postgres.render.com:5432",
+                "vidoskim_api_test_postgres",
+                "vidoskim_api_test_postgres_user",
+                "uIvWOTNs23nOiWIIxK1NRIWLxpFYEmgL",
+                TestUser.class);
+
+        Assertions.assertNotNull(connectionSource);
+    }
+
+    @Test
     void connectSqlite() {
         JdbcPooledConnectionSource connectionSource = ConnectionSourceUtil.connectSqlite(
                 "src/test/resources/test_db.sqlite", TestUser.class);
