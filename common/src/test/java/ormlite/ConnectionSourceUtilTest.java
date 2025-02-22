@@ -1,6 +1,8 @@
 package ormlite;
 
+import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.jdbc.JdbcPooledConnectionSource;
+import lombok.SneakyThrows;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ormlite.model.TestUser;
@@ -48,6 +50,22 @@ public class ConnectionSourceUtilTest {
     void connectSqlite() {
         JdbcPooledConnectionSource connectionSource = ConnectionSourceUtil.connectSqlite(
                 "src/test/resources/test_db.sqlite", TestUser.class);
+
+        Assertions.assertNotNull(connectionSource);
+    }
+
+    @Test
+    @SneakyThrows
+    void connectH2() {
+        JdbcPooledConnectionSource connectionSource = ConnectionSourceUtil.connectH2("../../resources/test_h2_db.db", TestUser.class);
+
+        Dao<TestUser, Long> dao = DaoUtil.getDao(connectionSource, TestUser.class);
+
+        dao.createOrUpdate(TestUser.builder()
+                .username("test")
+                .build());
+
+        System.out.println(dao.queryForAll());
 
         Assertions.assertNotNull(connectionSource);
     }

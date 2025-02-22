@@ -1,7 +1,7 @@
 package service;
 
 import org.junit.jupiter.api.Test;
-import ru.vidoskim.bukkit.util.service.MessagesService;
+import ru.vidoskim.bukkit.service.MessagesService;
 
 public class MessagesServiceTest {
     @Test
