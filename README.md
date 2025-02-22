@@ -134,6 +134,23 @@ public class SqliteExample {
 }
 ```
 
+### 🦿 H2:
+```java
+public class H2Example {
+    
+    private JdbcPooledConnectionSource connectionSource;
+
+    public static void main(String[] args) { 
+        connectionSource = ConnectionSourceUtil.connectH2(
+                "filePath", // Путь до файла (Он должен быть абсолютным)
+                TestUserModel.class // Модели, пример:
+                // TestUser.class, User.class
+                // Пример модели TestUser ниже
+        );
+    }
+}
+```
+
 ### TestUser модель:
 😊 С lombok:
 ```java
