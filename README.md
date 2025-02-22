@@ -9,6 +9,7 @@
 - - [MariaDB](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-mariadb)
 - - [PostgreSQL](https://github.com/sema1ary/vidoskim-api?tab=readme-ov-file#-postgresql)
 - - [Sqlite](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-sqlite)
+- - [H2](https://github.com/sema1ary/vidoskim-api?tab=readme-ov-file#-h2)
 - - [TestUser модель](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#testuser-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C)
 - - [Service интерфейс](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#%EF%B8%8F%EF%B8%8F-service-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81)
 - [**_Bukkit module_**](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-bukkit-module)
