@@ -364,16 +364,16 @@ messages:
 ```
 Все сообщения обязательно должны быть в секции messages, иначе выдаст ошибку.
 
-### ItemBuilder:
+### ItemBuilder (Dwyur - author):
 Позволяет создавать ItemStack-и без ItemMeta в удобном builder-е, скоро будут actions, для обработки кликов и прочего.
 ```java
 public class ItemBuilderExample implements Listener {
     @EventHandler
     private void onJoin(PlayerJoinEvent event) {
         event.getPlayer().getInventory().setItemInMainHand(
-                ItemBuilder.builder(Material.PLAYER_HEAD)
-                .setName(Component.text("test"))
-                // etc...
+                ItemBuilder.newBuilder(Material.PLAYER_HEAD)
+                .setName("test")
+                .onInteract(interact -> interact.getPlayer().sendMessage(Component.text("test")))
                 .build()
         );
     }

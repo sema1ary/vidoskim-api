@@ -11,6 +11,7 @@ import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.*;
 import org.bukkit.inventory.ItemStack;
+import ru.vidoskim.bukkit.item.builder.ItemBuilder;
 import ru.vidoskim.bukkit.item.registry.ItemActionsRegistry;
 import ru.vidoskim.bukkit.item.type.ItemActions;
 
