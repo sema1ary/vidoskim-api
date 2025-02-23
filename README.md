@@ -15,7 +15,7 @@
 - [**_Bukkit module_**](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-bukkit-module)
 - - [LiteCommands](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-litecommands)
 - - [MessagesService](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-messagesservice)
-- - [ItemBuilder](https://github.com/sema1ary/vidoskim-api?tab=readme-ov-file#itembuilder)
+- - [ItemBuilder](https://github.com/sema1ary/vidoskim-api?tab=readme-ov-file#itembuilder-dwyur---author)
 - [**_Velocity module_**](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-velocity-module)
 - - [LiteCommands](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-litecommands-1)
 
