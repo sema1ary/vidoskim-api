@@ -11,6 +11,7 @@
     <modules>
         <module>bukkit</module>
         <module>common</module>
+        <module>velocity</module>
     </modules>
 
     <properties>
