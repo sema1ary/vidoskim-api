@@ -258,6 +258,20 @@ public class ServiceExample {
 }
 ```
 
+### ServiceManager:
+Позволяет без лишнего кода регистрировать, получать и отключать сервисы (при регистрации выполняется .enable())
+```java
+public class ServiceManagerExample {
+    public static void main(String[] args) {
+        ServiceManager.registerService(TestService.class, new TestServiceImpl());
+        
+        TestService service = ServiceManager.getService(TestService.class);
+
+        ServiceManager.disableServices();r.
+    }
+}
+```
+
 ## 🔨 Bukkit module:
 Данный модуль предназначен для bukkit-плагинов (Майнкрафт-а). Содержит в себе фабрику 
 для регистрации команды через _**LiteCommands**_ (https://github.com/Rollczi/LiteCommands) и _**MessagesService**_, 
