@@ -5,11 +5,7 @@
 - - [Common](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#common)
 - - [Velocity](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#velocity)
 - [**_Common module_**](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-common-module)
-- - [MySQL](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-mysql)
-- - [MariaDB](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-mariadb)
-- - [PostgreSQL](https://github.com/sema1ary/vidoskim-api?tab=readme-ov-file#-postgresql)
-- - [Sqlite](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-sqlite)
-- - [H2](https://github.com/sema1ary/vidoskim-api?tab=readme-ov-file#-h2)
+- - [Sql]()
 - - [TestUser модель](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#testuser-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C)
 - - [Service интерфейс](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#%EF%B8%8F%EF%B8%8F-service-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81)
 - [**_Bukkit module_**](https://github.com/Vidoskim/vidoskim-api?tab=readme-ov-file#-bukkit-module)
@@ -58,14 +54,15 @@ Bukkit и Velocity содержат Common
 Данный модуль содержит утилиты для работы с базой данных через ORM (ORMLite) и интерфейс Сервиса.
 Методы для работы с базой данных различаются на 4 варианта:
 
-### 🦾 MySQL:
+### 🦾 SQL:
 ```java
-public class MySQLExample {
+public class SQLExample {
     
     private JdbcPooledConnectionSource connectionSource;
 
     public static void main(String[] args) { 
-        connectionSource = ConnectionSourceUtil.connectMySQL(
+        connectionSource = ConnectionSourceUtil.connectSQLDatabase(
+                "driver", // mariadb, mysql, postgresql
                 "host",
                 "database",
                 "username",
@@ -78,54 +75,15 @@ public class MySQLExample {
 }
 ```
 
-### 🦾 MariaDB:
+### 🦿 NoSQL:
 ```java
-public class MariaDBExample {
+public class NoSQLExample {
     
     private JdbcPooledConnectionSource connectionSource;
 
     public static void main(String[] args) { 
-        connectionSource = ConnectionSourceUtil.connectMariaDB(
-                "host",
-                "database",
-                "username",
-                "password",
-                TestUserModel.class // Модели, пример:
-                // TestUser.class, User.class
-                // Пример модели TestUser ниже
-        );
-    }
-}
-```
-
-### 🦾 PostgreSQL:
-```java
-public class PostgreSQLExample {
-    
-    private JdbcPooledConnectionSource connectionSource;
-
-    public static void main(String[] args) { 
-        connectionSource = ConnectionSourceUtil.connectPostgreSQL(
-                "host",
-                "database",
-                "username",
-                "password",
-                TestUserModel.class // Модели, пример:
-                // TestUser.class, User.class
-                // Пример модели TestUser ниже
-        );
-    }
-}
-```
-
-### 🦿 Sqlite:
-```java
-public class SqliteExample {
-    
-    private JdbcPooledConnectionSource connectionSource;
-
-    public static void main(String[] args) { 
-        connectionSource = ConnectionSourceUtil.connectSqlite(
+        connectionSource = ConnectionSourceUtil.connectNoSQLDatabase(
+                "driver", // sqlite, h2
                 "filePath", // Путь до файла
                 TestUserModel.class // Модели, пример:
                 // TestUser.class, User.class
