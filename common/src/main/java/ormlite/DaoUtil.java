@@ -1,6 +1,5 @@
 package ormlite;
 
-import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.jdbc.JdbcPooledConnectionSource;
 import lombok.NonNull;
@@ -15,9 +14,5 @@ public class DaoUtil {
         for(Class<?> modelClass: modelClasses) {
             DaoManager.createDao(connectionSource, modelClass);
         }
-    }
-
-    public <D extends Dao<T, ?>, T> D getDao(JdbcPooledConnectionSource connectionSource, Class<T> daoClass) {
-        return DaoManager.lookupDao(connectionSource, daoClass);
     }
 }
