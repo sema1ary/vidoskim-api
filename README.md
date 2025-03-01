@@ -301,11 +301,13 @@ public class LiteCommandsExamplePlugin extends JavaPlugin {
 public class MessagesServiceExamplePlugin extends JavaPlugin {
     @Override
     public void onEnable() {
-        MessagesService messagesService = new MessagesService();
+        ServiceManager.registerService(MessagesService.class, new MessagesServiceImpl());
         
-        messagesService.reload(this);
+        MessagesService service = ServiceManager.getService(MessagesService.class);
+
+        service.reload(this);
         
-        String messageExample = messagesService.getMessage("message-example");
+        String messageExample = service.getMessage("message-example");
         
         this.getLogger().info(messageExample);
         
