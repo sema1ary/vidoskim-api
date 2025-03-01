@@ -16,9 +16,14 @@ public class ServiceManager {
         return null;
     }
 
-    public static Object registerService(Class<?> serviceClass, Object service) {
+    public static void registerService(Class<?> serviceClass, Object service) {
         ((Service) service).enable();
         serviceMap.put(serviceClass, service);
-        return getService(serviceClass);
+    }
+
+    public static void disableServices() {
+        serviceMap.forEach((aClass, object) -> {
+            ((Service) object).disable();
+        });
     }
 }
