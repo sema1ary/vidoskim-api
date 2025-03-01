@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @SuppressWarnings("unused")
-public class ServiceUtil {
+public class ServiceManager {
     private final static Map<Class<?>, Object> serviceMap = new HashMap<>();
 
     public static Object getService(Class<?> serviceClass) {

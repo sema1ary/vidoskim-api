@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import service.impl.TestServiceImpl;
 
-public class ServiceUtilTest {
+public class ServiceManagerTest {
     @Test
     void registerService() {
-        TestService testService = (TestService) ServiceUtil.registerService(TestService.class, new TestServiceImpl());
+        TestService testService = (TestService) ServiceManager.registerService(TestService.class, new TestServiceImpl());
 
         Assertions.assertNotNull(testService);
     }
