@@ -22,8 +22,6 @@ public class ServiceManager {
     }
 
     public static void disableServices() {
-        serviceMap.forEach((aClass, object) -> {
-            ((Service) object).disable();
-        });
+        serviceMap.forEach((aClass, object) -> ((Service) object).disable());
     }
 }
