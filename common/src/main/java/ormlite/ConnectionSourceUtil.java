@@ -4,42 +4,50 @@ import com.j256.ormlite.jdbc.JdbcPooledConnectionSource;
 import lombok.NonNull;
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
-import ormlite.enums.NoSQLType;
-import ormlite.enums.SQLType;
 
 @UtilityClass
 @SuppressWarnings("unused")
 public class ConnectionSourceUtil {
     @SneakyThrows
-    public JdbcPooledConnectionSource connectSqlite(@NonNull String filePath, @NonNull Class<?>... modelClasses) {
-        return ConnectionSourceFactory.connectNoSQLDatabase(NoSQLType.SQLITE, filePath, modelClasses);
+    public JdbcPooledConnectionSource connectSQLDatabase(@NonNull String driver, String host, String database, String user,
+                                                         String pass, @NonNull Class<?>... modelClasses) {
+        String params;
+
+        if(driver.equalsIgnoreCase("mariadb") || driver.equalsIgnoreCase("postgresql")) {
+            params = "?sslMode=trust&autoReconnect=true";
+        } else {
+            params = "?useSSL=true&autoReconnect=true";
+        }
+
+        JdbcPooledConnectionSource connectionSource = new JdbcPooledConnectionSource(
+                "jdbc:" + driver + "://" + host + "/" + database + params);
+        setUpTheConnection(connectionSource, user, pass);
+        createModelDaoAndTable(connectionSource, modelClasses);
+        return connectionSource;
     }
 
     @SneakyThrows
-    public JdbcPooledConnectionSource connectH2(@NonNull String filePath, @NonNull Class<?>... modelClasses) {
-        return ConnectionSourceFactory.connectNoSQLDatabase(NoSQLType.H2, filePath, modelClasses);
+    public JdbcPooledConnectionSource connectNoSQLDatabase(@NonNull String driver, @NonNull String filePath,
+                                                           @NonNull Class<?>... modelClasses) {
+        JdbcPooledConnectionSource connectionSource = new JdbcPooledConnectionSource(
+                "jdbc:" + driver + ":" + filePath);
+        createModelDaoAndTable(connectionSource, modelClasses);
+        return connectionSource;
     }
 
-    @SneakyThrows
-    public JdbcPooledConnectionSource connectMySQL(String host, String database
-            , String user, String pass, @NonNull Class<?>... modelClasses) {
-        return ConnectionSourceFactory.connectSQLDatabase(SQLType.MYSQL, host, database, user, pass, modelClasses);
+    private void setUpTheConnection(@NonNull JdbcPooledConnectionSource connectionSource, String user, String pass) {
+        connectionSource.setUsername(user);
+        connectionSource.setPassword(pass);
+        connectionSource.setMaxConnectionsFree(5);
     }
 
-    @SneakyThrows
-    public JdbcPooledConnectionSource connectMariaDB(String host, String database
-            , String user, String pass, @NonNull Class<?>... modelClasses) {
-        return ConnectionSourceFactory.connectSQLDatabase(SQLType.MARIADB, host, database, user, pass, modelClasses);
-    }
-
-    @SneakyThrows
-    public JdbcPooledConnectionSource connectPostgreSQL(String host, String database
-            , String user, String pass, @NonNull Class<?>... modelClasses) {
-        return ConnectionSourceFactory.connectSQLDatabase(SQLType.POSTGRESQL, host, database, user, pass, modelClasses);
+    private void createModelDaoAndTable(@NonNull JdbcPooledConnectionSource connectionSource, @NonNull Class<?>... modelClasses) {
+        TableCreatorUtil.create(connectionSource, modelClasses);
+        DaoUtil.create(connectionSource, modelClasses);
     }
 
     @SneakyThrows
     public void closeConnection(JdbcPooledConnectionSource connectionSource) {
         if(connectionSource != null) connectionSource.close();
-     }
+    }
 }
