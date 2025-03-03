@@ -15,6 +15,11 @@ public class MessagesServiceImpl implements MessagesService {
     private final HashMap<String, String> messageMap = new HashMap<>();
 
     @Override
+    public void enable() {
+        reload();
+    }
+
+    @Override
     public void reload() {
         plugin.reloadConfig();
 

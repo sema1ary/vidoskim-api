@@ -15,6 +15,11 @@ public class ConfigurationServiceImpl implements ConfigurationService {
     private final  HashMap<String, Object> configurationMap = new HashMap<>();
 
     @Override
+    public void enable() {
+        reload();
+    }
+
+    @Override
     public void reload() {
         plugin.reloadConfig();
 
