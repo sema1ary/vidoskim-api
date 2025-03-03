@@ -4,6 +4,7 @@ import com.j256.ormlite.jdbc.JdbcPooledConnectionSource;
 import lombok.NonNull;
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
+import service.ServiceManager;
 
 @UtilityClass
 @SuppressWarnings("unused")
@@ -47,7 +48,8 @@ public class ConnectionSourceUtil {
     }
 
     @SneakyThrows
-    public void closeConnection(JdbcPooledConnectionSource connectionSource) {
+    public void closeConnection(boolean shouldDisableServices, JdbcPooledConnectionSource connectionSource) {
+        if(shouldDisableServices) ServiceManager.disableServices();
         if(connectionSource != null) connectionSource.close();
     }
 }
