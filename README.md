@@ -303,11 +303,7 @@ public class MessagesServiceExamplePlugin extends JavaPlugin {
     public void onEnable() {
         ServiceManager.registerService(MessagesService.class, new MessagesServiceImpl());
         
-        MessagesService service = ServiceManager.getService(MessagesService.class);
-
-        service.reload(this);
-        
-        String messageExample = service.getMessage("message-example");
+        String messageExample = ServiceManager.getService(MessagesService.class).getMessage("message-example");
         
         this.getLogger().info(messageExample);
         
