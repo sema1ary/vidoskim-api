@@ -283,11 +283,24 @@ public class ServiceManagerExample {
 public class LiteCommandsExamplePlugin extends JavaPlugin {
     @Override
     public void onEnable() {
-        new LiteCommandUtil().create(MessagesConfig.PREFIX,
+        new LiteCommandUtil().create("prefix",
                 "Неправильное использование",
                 "Команда только для игроков",
                 "Игрок не найден",
+                "У вас недостаточно прав",
 
+                new TestCommand() // Ваша команда
+        );
+    }
+    
+    // В кавычках - сообщения при ошибках liteCommands.
+}
+```
+```java
+public class LiteCommandsExamplePlugin extends JavaPlugin {
+    @Override
+    public void onEnable() {
+        new LiteCommandUtil().create("prefix",
                 new TestCommand() // Ваша команда
         );
     }
