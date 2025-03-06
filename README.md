@@ -304,8 +304,6 @@ public class LiteCommandsExamplePlugin extends JavaPlugin {
                 new TestCommand() // Ваша команда
         );
     }
-    
-    // В кавычках - сообщения при ошибках liteCommands.
 }
 ```
 
