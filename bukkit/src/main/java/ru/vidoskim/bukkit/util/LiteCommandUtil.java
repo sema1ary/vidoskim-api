@@ -25,7 +25,7 @@ public class LiteCommandUtil {
     }
 
     public LiteCommands<CommandSender> create(String prefix, String invalidUsageMessage, String playerOnlyMessage,
-                                              String playerNotFoundMessage, Object... commands) {
+                                              String playerNotFoundMessage, String missingPermissionsMessage, Object... commands) {
         return LiteBukkitFactory.builder()
                 .settings(settings -> settings
                         .fallbackPrefix(prefix)
@@ -35,6 +35,7 @@ public class LiteCommandUtil {
                 .message(LiteBukkitMessages.INVALID_USAGE, invalidUsageMessage)
                 .message(LiteBukkitMessages.PLAYER_ONLY, playerOnlyMessage)
                 .message(LiteBukkitMessages.PLAYER_NOT_FOUND, playerNotFoundMessage)
+                .message(LiteBukkitMessages.MISSING_PERMISSIONS, missingPermissionsMessage)
                 .schematicGenerator(SchematicFormat.angleBrackets())
                 .build();
     }
