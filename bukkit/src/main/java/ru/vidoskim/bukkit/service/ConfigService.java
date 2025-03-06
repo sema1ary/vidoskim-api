@@ -4,8 +4,9 @@ import lombok.NonNull;
 import service.Service;
 
 @SuppressWarnings("unused")
-public interface ConfigurationService extends Service {
+public interface ConfigService extends Service {
     void reload();
 
-    @NonNull <T> T get(@NonNull String index);
+    @NonNull
+    <T> T get(@NonNull String index);
 }

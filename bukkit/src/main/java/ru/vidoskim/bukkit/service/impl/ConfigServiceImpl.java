@@ -4,15 +4,14 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.Plugin;
-import ru.vidoskim.bukkit.service.ConfigurationService;
+import ru.vidoskim.bukkit.service.ConfigService;
 
 import java.util.HashMap;
 
 @RequiredArgsConstructor
-@SuppressWarnings("unused")
-public class ConfigurationServiceImpl implements ConfigurationService {
+public class ConfigServiceImpl implements ConfigService {
     private final Plugin plugin;
-    private final  HashMap<String, Object> configurationMap = new HashMap<>();
+    private final HashMap<String, Object> configurationMap = new HashMap<>();
 
     @Override
     public void enable() {
@@ -34,9 +33,9 @@ public class ConfigurationServiceImpl implements ConfigurationService {
                 .get("configuration." + string)));
     }
 
-    @SuppressWarnings("unchecked")
     @Override
-    public @NonNull <T> T get(@NonNull String index) {
+    @SuppressWarnings("unchecked")
+    public <T> @NonNull T get(@NonNull String index) {
         return (T) configurationMap.get(index);
     }
 }
