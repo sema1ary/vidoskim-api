@@ -33,7 +33,7 @@ public class ConnectionSourceUtil {
         String params;
 
         if(driver.equalsIgnoreCase("mariadb") || driver.equalsIgnoreCase("postgresql")) {
-            params = "&autoReconnect=true";
+            params = "?&autoReconnect=true";
         } else {
             params = "?useSSL=false&autoReconnect=true";
         }
