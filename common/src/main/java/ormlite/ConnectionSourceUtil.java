@@ -28,6 +28,24 @@ public class ConnectionSourceUtil {
     }
 
     @SneakyThrows
+    public JdbcPooledConnectionSource connectSQLDatabaseWithoutSSL(
+            @NonNull String driver, String host, String database, String user, String pass, @NonNull Class<?>... modelClasses) {
+        String params;
+
+        if(driver.equalsIgnoreCase("mariadb") || driver.equalsIgnoreCase("postgresql")) {
+            params = "&autoReconnect=true";
+        } else {
+            params = "?useSSL=false&autoReconnect=true";
+        }
+
+        JdbcPooledConnectionSource connectionSource = new JdbcPooledConnectionSource(
+                "jdbc:" + driver + "://" + host + "/" + database + params);
+        setUpTheConnection(connectionSource, user, pass);
+        createModelDaoAndTable(connectionSource, modelClasses);
+        return connectionSource;
+    }
+
+    @SneakyThrows
     public JdbcPooledConnectionSource connectNoSQLDatabase(@NonNull String driver, @NonNull String filePath,
                                                            @NonNull Class<?>... modelClasses) {
         JdbcPooledConnectionSource connectionSource = new JdbcPooledConnectionSource(
